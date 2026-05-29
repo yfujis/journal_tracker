@@ -82,13 +82,44 @@ source .venv/bin/activate
 
 2. Install dependencies.
 
+```bash
+pip install -r requirements.txt
+```
+
+3. Create local config files.
+
+```bash
+cp .env.example .env
+cp feeds.example.txt feeds.txt
+```
+
+4. Edit `.env` and `feeds.txt`.
+
+5. Start with a dry run.
+
+```bash
+PYTHONPATH=src python -m rss_reader run-once --verbose
+```
+
+## Configuration (`.env`)
+
+Key environment variables:
+
+| Variable | Required | Default | Description |
+| --- | --- | --- | --- |
+| FEEDS_FILE | No | feeds.txt | Path to feed URL list |
+| STATE_DB | No | data/rss_state.db | SQLite state database path |
+| POLL_INTERVAL_MINUTES | No | 60 | Polling interval in daemon mode |
+| MAX_ITEMS_PER_FEED | No | 30 | Maximum feed entries fetched per poll |
+| DRY_RUN | No | false | If true, logs emails instead of sending |
+| SMTP_HOST | Yes* | - | SMTP server host |
 | SMTP_PORT | No | 587 | SMTP server port |
 | SMTP_USE_TLS | No | true | Enable STARTTLS |
 | SMTP_USERNAME | No | - | SMTP login username |
 | SMTP_PASSWORD | No | - | SMTP login password |
 | SMTP_FROM | Yes* | - | Sender address |
 | NOTIFY_TO | Yes* | - | Comma-separated recipients |
-| SUBJECT_PREFIX | No | [RSS Alerts] | Email subject prefix |
+| SUBJECT_PREFIX | No | [Journal Alerts] | Email subject prefix |
 
 `*` Required only when `DRY_RUN=false`.
 
