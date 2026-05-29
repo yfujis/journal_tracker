@@ -1,2 +1,13 @@
 https://www.nature.com/nature.rss
 https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=science
+https://www.cell.com/cell/current.rss
+https://www.cell.com/neuron/current.rss
+https://www.nature.com/neuro.rss
+https://www.nature.com/ncomms.rss
+https://www.nature.com/nathumbehav.rss
+https://www.cell.com/cell-reports/current.rss
+https://www.cell.com/current-biology/current.rss
+https://elifesciences.org/rss/recent.xml
+https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=sciadv
+https://www.jneurosci.org/rss/current.xml
+https://www.biorxiv.org/collection/neuroscience/rss.xml
